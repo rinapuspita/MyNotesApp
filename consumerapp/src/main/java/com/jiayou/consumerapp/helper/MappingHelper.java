@@ -1,9 +1,9 @@
-package com.jiayou.mynotesapp.helper;
+package com.jiayou.consumerapp.helper;
 
 import android.database.Cursor;
 
-import com.jiayou.mynotesapp.db.DatabaseContract;
-import com.jiayou.mynotesapp.entity.Note;
+import com.jiayou.consumerapp.db.DatabaseContract;
+import com.jiayou.consumerapp.entity.Note;
 
 import java.util.ArrayList;
 

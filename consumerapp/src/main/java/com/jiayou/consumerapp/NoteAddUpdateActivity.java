@@ -1,12 +1,11 @@
-package com.jiayou.mynotesapp;
+package com.jiayou.consumerapp;
+
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,19 +13,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.jiayou.mynotesapp.db.NoteHelper;
-import com.jiayou.mynotesapp.entity.Note;
-import com.jiayou.mynotesapp.helper.MappingHelper;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import com.jiayou.consumerapp.entity.Note;
+import com.jiayou.consumerapp.helper.MappingHelper;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import static com.jiayou.mynotesapp.db.DatabaseContract.NoteColumns.CONTENT_URI;
-import static com.jiayou.mynotesapp.db.DatabaseContract.NoteColumns.DATE;
-import static com.jiayou.mynotesapp.db.DatabaseContract.NoteColumns.DESCRIPTION;
-import static com.jiayou.mynotesapp.db.DatabaseContract.NoteColumns.TITLE;
+import static com.jiayou.consumerapp.db.DatabaseContract.NoteColumns.CONTENT_URI;
+import static com.jiayou.consumerapp.db.DatabaseContract.NoteColumns.DATE;
+import static com.jiayou.consumerapp.db.DatabaseContract.NoteColumns.DESCRIPTION;
+import static com.jiayou.consumerapp.db.DatabaseContract.NoteColumns.TITLE;
 
 public class NoteAddUpdateActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText edtTitle, edtDescription;
@@ -35,7 +36,6 @@ public class NoteAddUpdateActivity extends AppCompatActivity implements View.OnC
     private Note note;
     private int position;
     Uri uriWithId;
-    private NoteHelper noteHelper;
 
     public static final String EXTRA_NOTE = "extra_note";
     public static final String EXTRA_POSITION = "extra_position";
@@ -54,8 +54,6 @@ public class NoteAddUpdateActivity extends AppCompatActivity implements View.OnC
         edtTitle = findViewById(R.id.edt_title);
         edtDescription = findViewById(R.id.edt_description);
         btnSubmit = findViewById(R.id.btn_submit);
-        noteHelper = NoteHelper.getInstance(getApplicationContext());
-        noteHelper.open();
         note = getIntent().getParcelableExtra(EXTRA_NOTE);
         if (note != null) {
             position = getIntent().getIntExtra(EXTRA_POSITION, 0);

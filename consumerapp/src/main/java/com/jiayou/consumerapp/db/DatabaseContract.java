@@ -1,4 +1,4 @@
-package com.jiayou.mynotesapp.db;
+package com.jiayou.consumerapp.db;
 
 import android.net.Uri;
 import android.provider.BaseColumns;
@@ -7,7 +7,7 @@ public class DatabaseContract {
     public static final String AUTHORITY = "com.jiayou.mynotesapp";
     private static final String SCHEME = "content";
 
-    public static final String TABLE_NAME = "note";
+//    public static final String TABLE_NAME = "note";
 
     public static final class NoteColumns implements BaseColumns {
         public static String TABLE_NAME = "note";

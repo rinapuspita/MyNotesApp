@@ -1,4 +1,4 @@
-package com.jiayou.mynotesapp;
+package com.jiayou.consumerapp;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,10 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-import com.jiayou.mynotesapp.adapter.NoteAdapter;
-import com.jiayou.mynotesapp.db.DatabaseContract;
-import com.jiayou.mynotesapp.entity.Note;
-import com.jiayou.mynotesapp.helper.MappingHelper;
+import com.jiayou.consumerapp.adapter.NoteAdapter;
+import com.jiayou.consumerapp.db.DatabaseContract;
+import com.jiayou.consumerapp.entity.Note;
+import com.jiayou.consumerapp.helper.MappingHelper;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements LoadNotesCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (getSupportActionBar() != null)
-            getSupportActionBar().setTitle("Notes");
+            getSupportActionBar().setTitle("Consumer Notes");
         progressBar = findViewById(R.id.progressbar);
         rvNotes = findViewById(R.id.rv_notes);
         rvNotes.setLayoutManager(new LinearLayoutManager(this));
